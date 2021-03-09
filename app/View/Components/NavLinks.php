@@ -4,16 +4,19 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Menu extends Component
+class NavLinks extends Component
 {
+    public $href;
+    public $active;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($href=false, $active=false)
     {
-        //
+        $this->href = $href;
+        $this->active = $active;
     }
 
     /**
@@ -23,6 +26,6 @@ class Menu extends Component
      */
     public function render()
     {
-        return view('components.menu');
+        return view('admin.components.nav-links');
     }
 }

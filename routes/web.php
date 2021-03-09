@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/test-css', 'jambatron');
+Route::view('/jambatron', 'jambatron');

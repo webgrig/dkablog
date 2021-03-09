@@ -6,6 +6,9 @@ use Illuminate\View\Component;
 
 class Button extends Component
 {
+    public $deleteOff;
+    public $href;
+    public $type;
     public $text;
     public $color;
     public $opacity;
@@ -20,8 +23,11 @@ class Button extends Component
      *
      * @return void
      */
-    public function __construct($text = false, $color = false, $opacity = false)
+    public function __construct($deleteOff=false, $href=false, $type='submit', $text=false, $color=false, $opacity=false)
     {
+        $this->deleteOff = $deleteOff;
+        $this->type = (!$type) ? 'submit' : $type;
+        $this->href = (!$href) ? '#' : $href;
         $this->text = (!$text) ? 'Вперед' : $text;
         $this->color = (!in_array($color, $this->allowedColors))? 'blue' : $color;
         $this->opacity = (!in_array($opacity, $this->allowedOpacities))? '400' : $opacity;
@@ -34,6 +40,6 @@ class Button extends Component
      */
     public function render()
     {
-        return view('components.inputs.button');
+        return view('admin.components.inputs.button');
     }
 }

@@ -8,5 +8,5 @@
             <x-inputs.button text="Вперед" color="indigo" opacity="400" />
         </div>
     </div>
-    <x-menu />
+    <x-jambatron-menu />
 </header>

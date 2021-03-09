@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Jambatron extends Component
+class JambatronHeader extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Jambatron extends Component
      */
     public function render()
     {
-        return view('components.jambatron');
+        return view('components.jambatron-header');
     }
 }

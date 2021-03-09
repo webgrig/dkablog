@@ -9,28 +9,41 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen  bg-gradient-to-tr from-indigo-50 to-indigo-100">
-            @include('admin.layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
+    <body class="font-sans antialiased text-gray-800">
+        <div class="min-h-screen">
+            @include('admin.layouts.header')
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            <main class="bg-gradient-to-b from-indigo-50">
+                @yield('content')
             </main>
         </div>
-
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+
+        @if(Route::is(['admin.article.edit', 'admin.article.create']))
+            <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+            <script>
+                CKEDITOR.replace('description_short', {
+                    height: 260,
+                    /* Default CKEditor 4 styles are included as well to avoid copying default styles. */
+                    contentsCss: [
+                        'http://cdn.ckeditor.com/4.16.0/full-all/contents.css',
+                        'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/css/classic.css'
+                    ]
+                });
+                CKEDITOR.replace('description', {
+                    height: 260,
+                    /* Default CKEditor 4 styles are included as well to avoid copying default styles. */
+                    contentsCss: [
+                        'http://cdn.ckeditor.com/4.16.0/full-all/contents.css',
+                        'https://ckeditor.com/docs/ckeditor4/4.16.0/examples/assets/css/classic.css'
+                    ]
+                });
+            </script>
+        @endif
     </body>
 </html>

@@ -13,7 +13,7 @@
 </head>
 <body class="text-gray-700">
 <div class="container mx-auto px-4 max-w-screen-lg">
-    <x-jambatron/>
+    <x-jambatron-header/>
     <div class="grid grid-cols-3 gap-4 text-center">
         <div class="transition duration-500 ease-in-out bg-blue-100 hover:bg-blue-400 rounded-md p-8">1</div>
         <div class="transition duration-500 ease-in-out bg-blue-100 hover:bg-blue-400 rounded-md p-8">2</div>
