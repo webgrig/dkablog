@@ -11,8 +11,8 @@ class DashBoardController extends Controller
 {
     public function index(){
         return view('admin.index', [
-            'categories' => Category::lastCategories(5),
-            'articles' => Article::lastArticles(5),
+            'categories' => Category::lastCategories(5)->get(),
+            'articles' => Article::lastArticles(5)->get(),
             'count_categories' => Category::count(),
             'count_articles' => Article::count()
          ]);

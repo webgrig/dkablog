@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Observers\ArticleObserver;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class Article extends Model
@@ -24,7 +26,7 @@ class Article extends Model
         return $this->morphToMany(Category::class, 'categoryable');
     }
 
-    public function scopeLastArticles($query, $count){
-        return $query->orderBy('created_at', 'desc')->take($count)->get();
+    public function scopeLastArticles($query, $amount){
+        return $query->orderBy('created_at', 'desc')->take($amount);
     }
 }

@@ -1,6 +1,7 @@
 @forelse($articles as $article)
     <tr>
         <td class="pb-3 pt-3">{!! $delimiter !!} {{$article->title}}</td>
+        <td class="pb-3 pt-3 text-center">{{$article->categories()->pluck('title')->implode(', ')}}</td>
         <td class="pb-3 pt-3 text-center">{{$article->published}}</td>
         <td class="pb-3 pt-3 text-right">
             <form action="{{route('admin.article.destroy', $article)}}" onsubmit="if(confirm('Удалить')){ return true} else {return false}" method="post">

@@ -9,7 +9,7 @@
         </option>
     @endif
 
-    @if(count($category_list->children) > 0)
+    @if(count($category_list->children))
         @include('admin.categories.partials.categories-select', [
             'categories' => $category_list->children,
             'delimiter' => ' - ' . $delimiter,

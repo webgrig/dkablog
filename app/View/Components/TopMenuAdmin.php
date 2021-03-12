@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class NavLinks extends Component
+class TopMenuAdmin extends Component
 {
     public $href;
     public $active;
@@ -26,6 +26,6 @@ class NavLinks extends Component
      */
     public function render()
     {
-        return view('admin.components.nav-links');
+        return view('admin.components.top-menu-admin');
     }
 }

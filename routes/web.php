@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/category/{slug?}', [SiteController::class, 'category'])->name('category');
+
+Route::get('/article/{slug?}', [SiteController::class, 'article'])->name('article');
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('home');
 
 Route::view('/jambatron', 'jambatron');

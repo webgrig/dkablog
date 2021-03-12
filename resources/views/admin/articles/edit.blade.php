@@ -3,7 +3,8 @@
     @component('admin.components.breadcrumb')
         @slot('title') Редактирование новости @endslot
         @slot('parent') Главная @endslot
-        @slot('active') Новости @endslot
+        @slot('level2') <a href="{{route('admin.article.index')}}">Новости</a> @endslot
+        @slot('active') {{$article->title}} @endslot
         @slot('separator') / @endslot
     @endcomponent
     <div class="max-w-7xl mx-auto pb-6 px-4 sm:px-6 lg:px-8">
